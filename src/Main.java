@@ -50,6 +50,7 @@ class MyPanel extends JPanel {
     private FontMetrics fim;
     */
 
+    /*
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -87,8 +88,17 @@ class MyPanel extends JPanel {
         }
         g.drawPolygon(s);
 
+    }
+    */
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.blue);
+        g.drawRect(10, 10, 80, 30);
+        g.drawRoundRect(100, 10, 80, 30, 15, 15);
 
     }
+
 }
 
 class MyFrame extends JFrame {
