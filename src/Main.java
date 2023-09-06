@@ -9,7 +9,7 @@ class MyPanel extends JPanel {
         g.drawString("Hello World", 100, 200);
     }
     */
-
+    /*
     public void setFonts(Graphics g) {
         if (f != null) return;
         f = new Font("SansSerif", Font.BOLD, 14);
@@ -48,6 +48,47 @@ class MyPanel extends JPanel {
     private Font fi;
     private FontMetrics fm;
     private FontMetrics fim;
+    */
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        int r = 40;
+        int cx = 50;
+        int cy = 100;
+        int angle = 30;
+
+        int dx = (int)(r * Math.cos(angle * Math.PI / 180));
+        int dy = (int)(r * Math.sin(angle * Math.PI / 180));
+
+        g.drawLine(cx, cy, cx + dx, cy + dy);
+        g.drawLine(cx, cy, cx + dx, cy - dy);
+        g.drawArc(cx - r, cy - r, 2 * r, 2 * r, angle, 360 - 2 * angle);
+
+        Polygon p = new Polygon();
+
+        cx = 150;
+        int i;
+        for(i = 0; i < 5; i++) {
+            p.addPoint(
+                    (int)(cx + r * Math.cos(i * 2 * Math.PI / 5)),
+                    (int)(cy + r * Math.sin(i * 2 * Math.PI / 5))
+            );
+        }
+
+        Polygon s = new Polygon();
+        cx = 250;
+        for(i = 0; i < 360; i++) {
+            double t = i / 360.0;
+            s.addPoint(
+                    (int)(cx + r * t * Math.cos(8 * t * Math.PI)),
+                    (int)(cy + r * t * Math.sin(8 * t * Math.PI))
+            );
+        }
+        g.drawPolygon(s);
+
+
+    }
 }
 
 class MyFrame extends JFrame {
