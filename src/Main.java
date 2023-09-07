@@ -3,13 +3,14 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class MyPanel extends JPanel {
-    /*
+    /* 7-4
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawString("Hello World", 100, 200);
     }
     */
-    /*
+
+    /* 7-5
     public void setFonts(Graphics g) {
         if (f != null) return;
         f = new Font("SansSerif", Font.BOLD, 14);
@@ -50,7 +51,7 @@ class MyPanel extends JPanel {
     private FontMetrics fim;
     */
 
-    /*
+    /* 7-6
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -91,6 +92,7 @@ class MyPanel extends JPanel {
     }
     */
 
+    /* 7-7
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.blue);
@@ -109,6 +111,31 @@ class MyPanel extends JPanel {
 
 
     }
+    */
+
+    /* 7-8
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawRect(10, 10, 80, 30);
+        g.drawRoundRect(100, 10, 80, 30, 15, 15);
+        g.drawOval(10, 100, 80, 30);
+        g.setColor(Color.red);
+        g.fillRect(11, 11, 79, 29);
+        g.fillRoundRect(101, 11, 79, 29, 15, 15);
+
+        int thickness = 4;
+
+        g.fill3DRect(200, 10, 80, 30, true);
+        for(int i = 1; i <= thickness; i++)
+            g.draw3DRect(200 - i, 10 - i, 80 + 2 * i - 1, 30 + 2 * i - 1, true);
+
+        g.fill3DRect(200, 50, 80, 30, false);
+        for(int i = 1; i <= thickness; i++)
+            g.draw3DRect(200 - i, 10 - i, 80 + 2 * i - 1, 30 + 2 * i - 1, true);
+
+        g.fillOval(10, 100, 80, 30);
+    }
+    */
 
 }
 
@@ -123,7 +150,7 @@ class MyFrame extends JFrame {
             }
         });
 
-        /*
+        /* 7-3
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension d = tk.getScreenSize();
         int screenHeight = d.height;
