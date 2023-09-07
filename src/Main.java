@@ -97,6 +97,17 @@ class MyPanel extends JPanel {
         g.drawRect(10, 10, 80, 30);
         g.drawRoundRect(100, 10, 80, 30, 15, 15);
 
+        int thickness = 4;
+
+        for(int i = 0; i <= thickness; i++)
+            g.draw3DRect(200 - i, 10 - i, 80 + 2 * i, 30 + 2 * i, true);
+
+        for(int i = 0; i <= thickness; i++)
+            g.draw3DRect(200 - i, 10 - i, 80 + 2 * i, 30 + 2 * i, false);
+
+        g.drawOval(10, 100, 80, 30);
+
+
     }
 
 }
