@@ -184,6 +184,7 @@ class MyFrame extends JFrame {
         setTitle("MyFrame");
         setSize(720, 720);
 
+        //7-2
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
