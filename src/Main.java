@@ -192,7 +192,11 @@ class MyPanel extends JPanel {
     }
     */
 
+    /* 7-11 */
+    public MyPanel() {
+        image = Toolkit.getDefaultToolkit().getImage("sample.jpg");
 
+    }
 
 }
 
