@@ -174,7 +174,24 @@ class MyPanel extends JPanel {
     }
     */
 
-    /* 7-10 */
+    /* 7-10
+    MyPanel() {
+        setBackground(Color.black);
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.red);
+        g.fillRect(10, 10, 80, 30);
+        g.setColor(Color.green);
+        g.fillRect(50, 20, 80, 30);
+        g.setColor(Color.blue);
+        g.fillRect(130, 40, 80, 30);
+        g.setXORMode(Color.green);
+        g.fillRect(90, 30, 80, 30);
+    }
+    */
+
 
 
 }
