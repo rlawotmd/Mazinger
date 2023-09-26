@@ -193,11 +193,26 @@ class MyPanel extends JPanel {
     */
 
     /* 7-11 */
+    private Image image = null;
     public MyPanel() {
-        image = Toolkit.getDefaultToolkit().getImage("sample.jpg");
+
+        image = Toolkit.getDefaultToolkit().getImage("../image/sample.png");
+        MediaTracker tracker = new MediaTracker(this);
+        tracker.addImage(image, 0);
+        try {
+            tracker.waitForID(0);
+        }
+        catch (InterruptedException e) {}
+
+        //java.net.URL iURL = this.getClass().getResource("../image/sample.png");
+        //image = new javax.swing.ImageIcon(iURL).getImage();
+    }
+    static int x = 0;
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Dimension d = getSize();
 
     }
-
 }
 
 class MyFrame extends JFrame {
